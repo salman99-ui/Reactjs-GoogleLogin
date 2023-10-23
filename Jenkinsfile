@@ -1,8 +1,5 @@
 pipeline {
   agent none
-  environment{
-    AUTHOR = 'Joko Sanstoso'
-  }
   stages{
     stage('echo'){
       agent {
@@ -10,10 +7,13 @@ pipeline {
           label "java11"
         }
       }
+      environtment {
+        APP = credentials("pas_name")
+      }
       steps{
         echo 'hello world'
         echo "job name : ${env.JOB_NAME}"
-        echo "Author name : ${AUTHOR}"
+        echo "username ${APP_USR}"
         }
       }
      stage('echo 2'){
