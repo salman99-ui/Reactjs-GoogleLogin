@@ -1,5 +1,8 @@
 pipeline {
   agent none
+  environment{
+    AUTHOR = 'Joko Sanstoso'
+  }
   stages{
     stage('echo'){
       agent {
@@ -10,6 +13,7 @@ pipeline {
       steps{
         echo 'hello world'
         echo "job name : ${env.JOB_NAME}"
+        echo "Author name : ${AUTHOR}"
         }
       }
      stage('echo 2'){
