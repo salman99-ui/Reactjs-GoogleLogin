@@ -2,7 +2,7 @@ pipeline {
   agent none
   stages{
     stage('echo'){
-      environtment {
+      environment {
         APP = credentials("pas_name")
       }
       agent {
