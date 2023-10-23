@@ -3,7 +3,7 @@ pipeline {
   stages{
     stage('echo'){
       environment {
-        APP = credentials("pas_name")
+        APP = credentials("pass_name")
       }
       agent {
         node {
