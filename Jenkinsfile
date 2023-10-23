@@ -11,19 +11,17 @@ pipeline {
         echo 'hello world'
         }
       }
-    stage('echo 2'){
+     stage('echo 2'){
       agent {
         node {
           label "nodejs"
         }
       }
       steps{
-        echo 'hello world nodejs'
+        echo 'hello world node'
         }
       }
     }
-    }
-  }
   post{
     success {
       echo "yay"
