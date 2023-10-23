@@ -1,17 +1,14 @@
 pipeline {
-  agent {
-    node {
-      label "java11"
-    }
-  }
+  agent none
   stages{
     stage('echo'){
+      agent {
+        node {
+          label "java11"
+        }
+      }
       steps{
         echo 'hello world'
-        script{
-          for(int i = 0 ; i < 4 ; i++){
-          echo "ke ${i}"
-          }
         }
       }
     }
