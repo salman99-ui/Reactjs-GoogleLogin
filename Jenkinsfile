@@ -2,13 +2,13 @@ pipeline {
   agent none
   stages{
     stage('echo'){
+      environtment {
+        APP = credentials("pas_name")
+      }
       agent {
         node {
           label "java11"
         }
-      }
-      environtment {
-        APP = credentials("pas_name")
       }
       steps{
         echo 'hello world'
