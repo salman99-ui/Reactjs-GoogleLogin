@@ -9,7 +9,7 @@ pipeline {
       }
       steps{
         echo 'hello world'
-        echo 'job name : ${env.JOB_NAME}'
+        echo "job name : ${env.JOB_NAME}"
         }
       }
      stage('echo 2'){
