@@ -1,5 +1,8 @@
 pipeline {
   agent none
+  parameters {
+    choice(name:"Deploy" , choices : ['Dev','Staging','Prod'] , description : 'Where to deploy')
+  }
   stages{
     stage('echo'){
       environment {
@@ -14,6 +17,7 @@ pipeline {
         echo 'hello world'
         echo "job name : ${env.JOB_NAME}"
         echo "username ${APP_USR}"
+        echo "Deploy to ${params.Deploy}"
         }
       }
      stage('echo 2'){
