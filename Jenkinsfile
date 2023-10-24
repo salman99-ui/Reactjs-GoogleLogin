@@ -1,7 +1,7 @@
 pipeline {
   agent none
-  parameters {
-    choice(name:"Deploy" , choices : ['Dev','Staging','Prod'] , description : 'Where to deploy')
+  triggers{
+    pollSCM("* * * * *")
   }
   stages{
     stage('echo'){
