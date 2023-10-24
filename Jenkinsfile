@@ -17,7 +17,7 @@ pipeline {
         echo 'hello world'
         echo "job name : ${env.JOB_NAME}"
         echo "username ${APP_USR}"
-        echo "Deploy to ${params.Deploy}"
+        echo "CronJob Success"
         }
       }
      stage('echo 2'){
