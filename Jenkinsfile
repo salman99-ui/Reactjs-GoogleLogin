@@ -1,8 +1,5 @@
 pipeline {
   agent none
-  triggers{
-    pollSCM("* * * * *")
-  }
   stages{
     stage('echo'){
       environment {
@@ -17,7 +14,6 @@ pipeline {
         echo 'hello world'
         echo "job name : ${env.JOB_NAME}"
         echo "username ${APP_USR}"
-        echo "CronJob Success"
         }
       }
      stage('echo 2'){
